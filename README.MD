@@ -2,6 +2,8 @@
 
 PecausaChat is a simple chat application built with Node.js, Express, and WebSockets in HTMX with it's plugin ws.
 Following the MVC pattern with routers.
+![chat](public/chat.png)
+![login](public/login.png)
 
 ## Features
 
@@ -25,7 +27,7 @@ Following the MVC pattern with routers.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 Also this is totally a learning begginer project with no commercial use.
 
 ## Acknowledgments
