@@ -1,6 +1,7 @@
 # PecausaChat
 
-PecausaChat is a simple chat application built with Node.js, Express, and WebSockets.
+PecausaChat is a simple chat application built with Node.js, Express, and WebSockets in HTMX with it's plugin ws.
+Following the MVC pattern with routers.
 
 ## Features
 
@@ -25,6 +26,7 @@ PecausaChat is a simple chat application built with Node.js, Express, and WebSoc
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Also this is totally a learning begginer project with no commercial use.
 
 ## Acknowledgments
 
@@ -34,3 +36,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 * [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 * [htmx](https://htmx.org/)
 * [db-local](https://www.npmjs.com/package/db-local)
+
+Learning project by [QuimeraGH](https://github.com/QuimeraGH), wich does not have any commercial use.
+This is an inspiration for begginers looking for examples on web development backend with templating,
+htmx learners and others.
