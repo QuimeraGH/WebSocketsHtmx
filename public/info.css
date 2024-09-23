@@ -1,0 +1,107 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b2f;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    background-color: #162447;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e43f5a;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #c027d3;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #1f4068;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #e43f5a;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e43f5a;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #d12b48;
+  }
+  
+  #response {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #ff007f;
+    color: #fff;
+    display: none; /* Initially hidden, will show after a response */
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+#responselogin, #responseregister {
+  font-size: 12px;
+  color: #ff007f;
+}

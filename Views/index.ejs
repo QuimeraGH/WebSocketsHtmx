@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login or Register</title>
+  <script src="https://unpkg.com/htmx.org"></script>
+  <link rel="stylesheet" href="/info.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome! Please Login or Register</h1>
+
+    <!-- Login Form -->
+    <div id="login-form">
+      <h2>Login</h2>
+      <form hx-post="/login" hx-target="#responselogin" hx-swap="outerHTML">
+        <label for="login-username">Username</label>
+        <input type="text" id="login-username" name="username" required>
+        
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" required>
+        
+        <button type="submit">Login</button>
+      </form>
+      <div id="responselogin"></div>
+    </div>
+
+    <!-- Registration Form -->
+    <div id="register-form">
+      <h2>Register</h2>
+      <form hx-post="/register" hx-target="#responseregister" hx-swap="outerHTML">
+        <label for="register-username">Username</label>
+        <input type="text" id="register-username" name="username" required>
+        
+        <label for="register-password">Password</label>
+        <input type="password" id="register-password" name="password" required>
+        
+        <button type="submit">Register</button>
+      </form>
+      <div id="responseregister"></div>
+    </div>
+
+    <script>
+        document.body.addEventListener("htmx:responseError", (event) => {
+            const errorTarget = event.detail.target.id;
+            const errorElement = document.getElementById(errorTarget);
+            errorElement.innerText = event.detail.xhr.response;
+        })
+
+        document.body.addEventListener("htmx:afterRequest", (event) => {
+            if (event.detail.xhr.status == 200) {
+                window.location.href = "/general";
+            }
+        })
+    </script>
+    
+  </div>
+</body>
+</html>

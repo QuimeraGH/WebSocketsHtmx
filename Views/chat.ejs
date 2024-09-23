@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/htmx.org@1.9.12/dist/htmx.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/ws.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+    <title>PecausaChat</title>
+  </head>
+  <body>
+
+    <button id="logout" hx-post="/logout" hx-trigger="click">Logout</button>
+    <div id="app-container" hx-ext="ws" ws-connect="ws://localhost:8080">
+      <h1>PecausaChat</h1>
+
+      <% if (!username) { %>
+        <h1>Necesitas haber iniciado sesion con algun usuario!</h1>
+      <% } else { %>
+      <p>Iniciado sesion como: <strong><%= username %></strong></p>
+      <form ws-send hx-target="#chat-room" hx-swap="outerHTML" hx-include="find input">
+        <input name="message" id="message-input" type="text" placeholder="Type a message" required>
+        <button type="submit" id="button-send">></button>
+      </form>
+      <ul id="chat-room"></ul>
+      <% } %>
+    </div>
+  </body>
+
+  <script>
+    function tryScroll() {
+      let ul = document.getElementById("chat-room");
+      ul.scrollTop = ul.scrollHeight;
+    }
+
+    document.body.addEventListener("htmx:afterRequest", (event) => {
+            if (event.detail.xhr.status == 200) {
+                window.location.href = "/";
+            }
+        })
+
+    document.body.addEventListener("htmx:wsAfterMessage", (event) => {
+      document.getElementById("message-input").value = "";
+      updateLiClass();
+      tryScroll();
+    });
+
+    function updateLiClass() {
+      let username = "<%= username %>";
+      [...document.getElementsByClassName("some-li")].map((li) => {
+        if (li.id === username) {
+          li.classList.remove(...li.classList);
+          li.classList.add("some-li", "yours");
+        } else {
+          if (li.className !== "some-li") {
+            li.classList.remove(...li.classList);
+            li.classList.add("some-li");
+          }
+        }
+      });
+    }
+  </script>
+</html>
