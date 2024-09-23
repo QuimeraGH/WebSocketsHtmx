@@ -14,7 +14,7 @@ PecausaChat is a simple chat application built with Node.js, Express, and WebSoc
 
 1. Clone the repository
 2. Run `npm install` to install the dependencies
-3. Run `npm start` to start the server
+3. Run `npm run server` to start the server
 
 ## Usage
 
