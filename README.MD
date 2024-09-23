@@ -2,6 +2,7 @@
 
 PecausaChat is a simple chat application built with Node.js, Express, and WebSockets in HTMX with it's plugin ws.
 Following the MVC pattern with routers.
+
 ![chat](public/chat-example.png)
 ![login](public/chat-register.png)
 
